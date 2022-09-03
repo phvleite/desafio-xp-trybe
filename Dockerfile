@@ -1,6 +1,6 @@
 FROM node:16.14-alpine
 
-WORKDIR /app-backend
+WORKDIR /app-backend-desafio-xp-trybe
 
 COPY package* ./
 

@@ -6,7 +6,7 @@ services:
     ports:
       - 3001:3001
     platform: linux/x86_64
-    working_dir: /app_backend_desafio_xp_trybe
+    working_dir: /app-backend-desafio-xp-trybe
     depends_on:
       db:
         condition: service_healthy
@@ -22,7 +22,7 @@ services:
       timeout: 10s
       retries: 5
     volumes:
-      - ./:/app_backend_desafio_xp_trybe
+      - ./:/app-backend-desafio-xp-trybe
   db:
     image: mysql:8.0.21
     container_name: db
