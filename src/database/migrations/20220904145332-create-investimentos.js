@@ -10,7 +10,7 @@ module.exports = {
         autoIncrement: true,
       },
       contId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
         field: 'conta_id',
         references: {
@@ -19,7 +19,7 @@ module.exports = {
         }
       },
       acaoId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
         field: 'acao_id',
         references: {
@@ -39,11 +39,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         field: 'created_at',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        field: 'updated_at'
+        field: 'updated_at',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     })
   },

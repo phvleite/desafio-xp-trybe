@@ -4,7 +4,7 @@ import User from './user';
 
 class Conta extends Model {
   id!: number;
-  user!: User | undefined;
+  user!: User;
   saldo!: number;
   createdAt!: Date;
   updatedAt!: Date;
