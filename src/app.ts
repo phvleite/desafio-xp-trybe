@@ -3,6 +3,7 @@ import express from 'express';
 import { StatusCodes } from 'http-status-codes';
 import usersRouter from './routers/usersRouters';
 import errorMiddleware from './middlewares/errorMiddleware';
+import authRouter from './routers/authRouters';
 
 export default class App {
   public app: express.Express;
@@ -27,6 +28,7 @@ export default class App {
     this.app.use(express.json());
     this.app.use(accessControl);
     this.app.use(usersRouter);
+    this.app.use(authRouter);
 
     this.app.use(errorMiddleware);
   }

@@ -1,5 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 import 'dotenv';
+import { IPayLoad } from '../interfaces/Interfaces';
 
 const jwtSecret = String(process.env.JWT_SECRET);
 
@@ -8,10 +9,10 @@ export default class JwtService {
     return jwt.sign(payload, jwtSecret);
   }
 
-  static validateToken(token: string) {
+  static validateToken(token: string): IPayLoad {
     try {
       const data = jwt.verify(token, jwtSecret);
-      return data;
+      return data as IPayLoad;
     } catch (e) {
       const error = new Error('Token must be a valid token');
       error.name = 'UnauthorizedError';
@@ -19,7 +20,7 @@ export default class JwtService {
     }
   }
 
-  static validateAuthorization(authorization: string | undefined) {
+  static existToken(authorization: string | undefined): string {
     if (!authorization) {
       const error = new Error();
       error.name = 'UnauthorizedError';

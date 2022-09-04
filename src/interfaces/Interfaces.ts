@@ -14,3 +14,13 @@ export interface INewUser {
 export interface IValidateUserId {
   id: number;
 }
+
+export interface ILogin {
+  email: string;
+  password: string;
+}
+
+export interface IPayLoad {
+  name: string;
+  email: string;
+}

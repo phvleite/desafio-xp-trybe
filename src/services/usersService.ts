@@ -1,6 +1,6 @@
 import Joi from 'joi';
 import User from '../database/models/user';
-import { IUser, INewUser, IValidateUserId } from '../interfaces/IUser';
+import { IUser, INewUser, IValidateUserId } from '../interfaces/Interfaces';
 import passwordService from './passwordService';
 
 export default class UserService {
