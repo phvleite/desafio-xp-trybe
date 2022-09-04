@@ -24,3 +24,9 @@ export interface IPayLoad {
   name: string;
   email: string;
 }
+
+export interface IComprar {
+  codCliente: number;
+  codAtivo: number;
+  qtdeAtivo: number;
+}
