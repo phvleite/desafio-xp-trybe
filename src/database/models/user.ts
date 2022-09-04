@@ -6,8 +6,6 @@ class User extends Model {
   name!: string;
   email!: string;
   password!: string;
-  createdAt!: Date;
-  updatedAt!: Date;
 }
 
 User.init({
@@ -41,6 +39,7 @@ User.init({
   sequelize: db,
   modelName: 'users',
   underscored: true,
+  timestamps: true,
 });
 
 export default User;

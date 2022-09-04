@@ -1,6 +1,7 @@
 import 'express-async-errors';
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { StatusCodes } from 'http-status-codes';
+import usersRouter from './routers/usersRouters';
 import errorMiddleware from './middlewares/errorMiddleware';
 
 export default class App {
@@ -11,7 +12,7 @@ export default class App {
 
     this.config();
 
-    this.app.get('/', (_req: Request, res: Response) => res.status(StatusCodes.OK)
+    this.app.get('/', (_req, res) => res.status(StatusCodes.OK)
       .send('Express + TypeScript, agora em CLASS'));
   }
 
@@ -25,6 +26,7 @@ export default class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+    this.app.use(usersRouter);
 
     this.app.use(errorMiddleware);
   }
